@@ -2,7 +2,7 @@
 import React, {useEffect, useState} from 'react';
 import {Link, useLocation} from 'react-router-dom';
 import './header.css';
-import logo from '../../assets/header/logo.png';
+import logo from '../../assets/header/black_design_logo.png';
 import useMediaQuery from "@mui/material/useMediaQuery";
 import {useTheme} from "@mui/material/styles";
 
