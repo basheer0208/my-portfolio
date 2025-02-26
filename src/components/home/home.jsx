@@ -100,13 +100,6 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="scroll-indicator">
-        <div className="mouse">
-          <div className="wheel"></div>
-        </div>
-        <span className="scroll-text">Scroll to explore</span>
-      </div>
-
       <div className="background-shapes">
         <div className="shape shape-1"></div>
         <div className="shape shape-2"></div>

@@ -34,9 +34,10 @@
   }
 
 .projects-container {
-  padding: 4rem 2rem;
+  padding: 100px 2rem;
   background: #1a1a1a;
   min-height: 100vh;
+
 }
 
 .projects-title {
@@ -365,7 +366,7 @@
 /* Mobile Styles */
 @media (max-width: 768px) {
   .projects-container {
-    padding: 2rem 1rem;
+    padding: 60px 1rem;
   }
 
   .projects-title {

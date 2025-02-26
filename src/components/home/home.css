@@ -5,6 +5,7 @@
   background: #1a1a1a;
   color: #ffffff;
   overflow: hidden;
+  padding-top: 100px;
 }
 
 .home-content {
@@ -32,8 +33,10 @@
   border-right: 3px solid #efcca2;
   padding-right: 5px;
   animation: blink 0.75s step-end infinite;
-  white-space: nowrap;
+  white-space: normal;
   display: inline-block;
+  max-width: 100%;
+  word-wrap: break-word;
 }
 
 .home-description {
@@ -164,45 +167,6 @@
   transform: translateY(-2px);
 }
 
-.scroll-indicator {
-  position: absolute;
-  bottom: 2rem;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.5rem;
-  opacity: 0;
-  animation: slideUpFade 0.8s ease forwards;
-  animation-delay: 4s;
-}
-
-.mouse {
-  width: 25px;
-  height: 40px;
-  border: 2px solid #efcca2;
-  border-radius: 20px;
-  position: relative;
-}
-
-.wheel {
-  width: 3px;
-  height: 6px;
-  background: #efcca2;
-  position: absolute;
-  top: 5px;
-  left: 50%;
-  transform: translateX(-50%);
-  border-radius: 2px;
-  animation: scroll 1.5s ease-in-out infinite;
-}
-
-.scroll-text {
-  color: #a0a0a0;
-  font-size: 0.9rem;
-}
-
 .background-shapes {
   position: absolute;
   top: 0;
@@ -252,11 +216,6 @@
   75% { transform: translate(-50px, -50px); }
 }
 
-@keyframes scroll {
-  0% { transform: translate(-50%, 0); opacity: 1; }
-  100% { transform: translate(-50%, 15px); opacity: 0; }
-}
-
 @keyframes blink {
   from, to { border-color: transparent }
   50% { border-color: #efcca2 }
@@ -276,11 +235,11 @@
 /* For tablets */
 @media screen and (max-width: 900px) {
   .home-content {
-    padding: 3rem 1.5rem;
+    padding: 60px 1.5rem;
   }
 
   .typing-text {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
   }
 
   .home-description {
@@ -318,7 +277,8 @@
   }
 
   .typing-text {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
+    line-height: 1.3;
   }
 
   .home-description {
@@ -360,10 +320,6 @@
     width: 100%;
     max-width: 200px;
     padding: 0.8rem 1rem;
-  }
-
-  .scroll-indicator {
-    bottom: 1rem;
   }
 
   .shape {
