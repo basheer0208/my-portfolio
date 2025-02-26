@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './home.css';
-import CV from '../../assets/cv/Basheer_resume.pdf'; 
+import CV from '../../assets/CV/Basheer_resume.pdf'; 
 
 const Home = () => {
   const navigate = useNavigate();
