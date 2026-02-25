@@ -71,6 +71,10 @@ ul, ol {
   background: var(--color-text-secondary);
 }
 
+main {
+  position: relative;
+}
+
 /* Alternating section backgrounds */
 .section {
   position: relative;

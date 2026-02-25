@@ -15,7 +15,7 @@ import Preloader from './components/Preloader/Preloader';
 
 function App() {
   const [loading, setLoading] = useState(true);
-  const [isDark, setIsDark] = useState(true);
+  const [isDark, setIsDark] = useState(false);
 
   useEffect(() => {
     const timer = setTimeout(() => setLoading(false), 1400);

@@ -41,8 +41,8 @@
 }
 
 .profile-img {
-  width: 180px;
-  height: 180px;
+  width: 260px;
+  height: 260px;
   border-radius: var(--radius-xl);
   object-fit: cover;
   border: 2px solid rgba(240, 194, 122, 0.3);

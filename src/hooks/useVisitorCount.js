@@ -8,16 +8,25 @@ const useVisitorCount = () => {
 
   useEffect(() => {
     const fetchCount = async () => {
-      try {
-        const res = await fetch(
-          `https://${GOATCOUNTER_SITE}.goatcounter.com/counter//index.html.json`
-        );
-        if (res.ok) {
-          const data = await res.json();
-          setCount(BASE_COUNT + (data.count_unique || data.count || 0));
+      // Try multiple possible paths GoatCounter may have tracked
+      const paths = ['/my-portfolio/', '/my-portfolio', '/'];
+
+      for (const path of paths) {
+        try {
+          const res = await fetch(
+            `https://${GOATCOUNTER_SITE}.goatcounter.com/counter/${encodeURIComponent(path)}.json`
+          );
+          if (res.ok) {
+            const data = await res.json();
+            const realCount = parseInt(data.count, 10) || 0;
+            if (realCount > 0) {
+              setCount(BASE_COUNT + realCount);
+              return;
+            }
+          }
+        } catch {
+          // Try next path
         }
-      } catch {
-        // API not available — show base count
       }
     };
 
