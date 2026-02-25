@@ -1,0 +1,29 @@
+.back-to-top {
+  position: fixed;
+  bottom: var(--space-xl);
+  right: var(--space-xl);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--glass-bg);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border: var(--glass-border);
+  color: var(--color-text-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 900;
+  transition: border-color var(--transition-base), background var(--transition-base);
+}
+
+.back-to-top:hover {
+  border-color: var(--color-accent);
+  background: var(--color-accent-dim);
+}
+
+.back-to-top svg {
+  width: 20px;
+  height: 20px;
+}

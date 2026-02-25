@@ -1,23 +1,49 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Home from './components/home/home';
-import Header from './components/header/header';
-import './App.css';
-import MyProjects from './components/myProjects/myProjects';
-import About from './components/about/about';
+import React, { useState, useEffect } from 'react';
+import Navbar from './components/Navbar/Navbar';
+import Hero from './components/Hero/Hero';
+import About from './components/About/About';
+import Skills from './components/Skills/Skills';
+import Projects from './components/Projects/Projects';
+import Experience from './components/Experience/Experience';
+import Testimonials from './components/Testimonials/Testimonials';
+import Contact from './components/Contact/Contact';
+import Footer from './components/Footer/Footer';
+import GrainOverlay from './components/shared/GrainOverlay';
+import ScrollProgress from './components/shared/ScrollProgress';
+import BackToTop from './components/shared/BackToTop';
+import Preloader from './components/Preloader/Preloader';
 
 function App() {
+  const [loading, setLoading] = useState(true);
+  const [isDark, setIsDark] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setLoading(false), 1400);
+    return () => clearTimeout(timer);
+  }, []);
+
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', isDark ? 'dark' : 'light');
+  }, [isDark]);
+
   return (
-    <Router>
-      <div className="App">
-        <Header />
-        <Routes>
-          <Route path="/my-portfolio" element={<Home />} />
-          <Route path="/my-portfolio/my-projects" element={<MyProjects />} />
-          <Route path="/my-portfolio/about-me" element={<About />} />
-        </Routes>
-      </div>
-    </Router>
+    <>
+      <Preloader loading={loading} />
+      <ScrollProgress />
+      <GrainOverlay />
+      <Navbar isDark={isDark} onToggleTheme={() => setIsDark(!isDark)} />
+      <main>
+        <Hero />
+        <About />
+        <Skills />
+        <Projects />
+        <Experience />
+        <Testimonials />
+        <Contact />
+        <Footer />
+      </main>
+      <BackToTop />
+    </>
   );
 }
 
