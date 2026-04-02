@@ -26,8 +26,8 @@ const Contact = () => {
         Get In <span>Touch</span>
       </h2>
       <p className="contact-subtitle">
-        Have a project in mind or just want to say hello? Drop me a message and
-        I'll get back to you as soon as possible.
+        Have a project, partnership, or startup idea? Whether you need a developer
+        or a technical co-founder — let's talk.
       </p>
 
       <motion.form

@@ -26,7 +26,7 @@ const About = () => {
         >
           <img src={profileImage} alt="Basheer" className="profile-img" />
           <p className="profile-name">Basheer Abbas Shaik</p>
-          <p className="profile-role">Full Stack Developer</p>
+          <p className="profile-role">Full Stack Developer & Founder</p>
         </motion.div>
 
         {/* Bio card */}
@@ -39,15 +39,14 @@ const About = () => {
         >
           <h3>Who I Am</h3>
           <p>
-            Full Stack Developer with 6 years of experience building and scaling web applications
-            across hospitality, property management, corporate, and research domains. Spearheaded
-            end-to-end product development for 3 production platforms from database design to AWS
-            deployment.
+            Full Stack Developer and Founder with 6+ years of experience building production web
+            applications and launching my own ventures. Co-founded The Code House — a web dev agency
+            and ed-tech platform — and building CarbonReady, a B2B SaaS for EU carbon compliance.
           </p>
           <p style={{ marginTop: 'var(--space-md)' }}>
-            Core stack: React, Angular, Python (FastAPI), Node.js, MySQL, AWS, and GCP. Delivered
-            measurable gains including 60% faster API response times, 45% higher mobile engagement,
-            and 2x concurrent load capacity.
+            Professionally shipped 5 production platforms across hospitality, property management,
+            corporate, and research domains. Core stack: React, Python (FastAPI), TypeScript, AWS,
+            and Supabase. I build things end-to-end — from idea to deployment.
           </p>
         </motion.div>
 
@@ -79,7 +78,11 @@ const About = () => {
             <div className="stat-label">Years Experience</div>
           </div>
           <div className="stat-item">
-            <div className="stat-number"><AnimatedCounter target={3} /></div>
+            <div className="stat-number"><AnimatedCounter target={2} /></div>
+            <div className="stat-label">Companies Founded</div>
+          </div>
+          <div className="stat-item">
+            <div className="stat-number"><AnimatedCounter target={5} /></div>
             <div className="stat-label">Production Platforms</div>
           </div>
           <div className="stat-item">

@@ -26,14 +26,25 @@ const Projects = () => {
     return () => window.removeEventListener('keydown', onKey);
   }, []);
 
+  const professional = projects.filter((p) => p.type === 'professional');
+  const personal = projects.filter((p) => p.type === 'personal');
+
   return (
     <SectionWrapper id="projects" className="projects-section" glowIndex={2}>
       <h2 className="section-title">
         My <span>Projects</span>
       </h2>
 
+      <h3 className="projects-group-title">Professional</h3>
       <div className="projects-grid">
-        {projects.map((project, i) => (
+        {professional.map((project, i) => (
+          <ProjectCard key={project.id} project={project} index={i} onClick={openModal} />
+        ))}
+      </div>
+
+      <h3 className="projects-group-title">Personal</h3>
+      <div className="projects-grid">
+        {personal.map((project, i) => (
           <ProjectCard key={project.id} project={project} index={i} onClick={openModal} />
         ))}
       </div>
@@ -98,7 +109,7 @@ const Projects = () => {
                       Visit Website
                     </a>
                   )}
-                  {selected.github && (
+                  {selected.github && selected.github !== 'private' && (
                     <a
                       href={selected.github}
                       className="modal-link modal-link-secondary"
@@ -107,6 +118,11 @@ const Projects = () => {
                     >
                       View on GitHub
                     </a>
+                  )}
+                  {selected.github === 'private' && (
+                    <span className="modal-link modal-link-private">
+                      Private Repository
+                    </span>
                   )}
                 </div>
               </div>

@@ -4,7 +4,7 @@ import social from '../../data/social';
 import CV from '../../assets/CV/Basheer_Abbas_Resume.pdf';
 import './Hero.css';
 
-const skills = ['React', 'Angular', 'Python', 'FastAPI', 'Node.js', 'TypeScript', 'AWS', 'MySQL', 'Docker', 'GraphQL'];
+const skills = ['React', 'Angular', 'Python', 'FastAPI', 'Node.js', 'TypeScript', 'AWS', 'Supabase', 'MySQL', 'Docker'];
 
 const nameWords = ['Basheer', 'Abbas', 'Shaik'];
 
@@ -80,7 +80,7 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.5 }}
           >
-            Full Stack Developer
+            Full Stack Developer & Founder
           </motion.p>
 
           <motion.div
